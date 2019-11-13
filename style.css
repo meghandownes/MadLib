@@ -1,0 +1,19 @@
+/* Whole document: */
+body{
+  font-family: Purisa;
+  font-size: 12pt;
+}
+/* Headers */
+h1{
+  font-size: 24pt;
+  font-family: Leto;
+}
+/*Sub Headers*/
+h2{
+  font-size: 18pt;
+  font-family: Leto;
+}
+h3{
+  font-size: 14pt;
+  font-family: Leto;
+}
