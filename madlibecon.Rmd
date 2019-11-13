@@ -1,0 +1,329 @@
+---
+title: 'Fill Me In? '
+author: "Meghan Downes, PhD"
+date: "October 18, 2019"
+output:
+  html_document:
+    css: style.css
+runtime: shiny
+resource_files:
+- predatorprey.csv
+- demandsupply1.csv
+- demandsupply.csv
+- PPF.csv
+- DemandAntelope.csv
+- SupplyAntelope
+- CPI.csv
+---
+
+# An Interactive Tale of Intrigue and Economics
+
+An interactive story means you (the reader) gets to create the story along with the author.  To see how this works, think of a name for the land in our tale of intrigue and economics: `r textInput("name_1", "A Proper Noun or Name", "Land of Giant Chickens")`  Now every time the story references the name of this great and glorious land the name  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_1, "</code>", "</span>")})` magically appears!  
+
+### Let's Begin
+
+Create some creatures to live in this world, and provide some information that can be used to complete our story.  Be creative, silly, or serious when you fill in these values.  A default value is provided, but you (the reader) are encouraged to change each of these values and see how the story changes.  
+
+`r textInput("creature_1", "Creature 1:", "Roosters")` 
+`r textInput("creature_2", "Creature 2:", "Slime Mold")`
+`r textInput("creature_3", "Creature 3:", "Cupcakes")`
+`r textInput("name_2", "a four word descriptive name/title:", "Wicked Cougar -- Super Genius")`
+
+### Now, let's add some descriptive words to our story.
+
+`r textInput("color_1", "An Adjective:", "Steamy")`
+`r textInput("color_2", "An Adjective:", "Bold")`
+`r textInput("feeling_1_", "An Adjective:", "Trepidation")`
+`r textInput("texture_1_", "An Adjective:", "Purple")`
+
+`r textInput("emotion_1", "An Adverb:", "Silly")`
+`r textInput("adverb_2", "An Adverb:", "Slimy")`
+
+
+### Alright! Now some action words.
+
+`r textInput("action_1", "A Past Tense Verb:", "Consumed")`
+`r textInput("verb_2", "A Verb ending in -ing-:", "Screaming")`
+`r textInput("verb_3", "A Verb ending in -ing-:", "Flying")`
+`r textInput("texture_1_", "A Verb:", "Murder")`
+
+### Just a few objects in our world.
+
+`r textInput("input_1", "A Plural Noun:", "Banana Peels")` 
+`r textInput("input_3", "A Singular Noun:", "Fire")`
+`r textInput("input_4", "A Plural Noun:", "Sweet Potatoes")`
+`r textInput("object_1", "A Plural Noun:", "Manure Piles")`
+
+### Excellent.  Now, we are ready to see our story unfold!
+
+# In the Beginning
+
+Brought forth from the primordial slime by the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})`, were the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_1, "</code>", "</span>")})` and the  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})`  At first these were the only things in this world. However, the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})` became a bit bored with their experiment because it seemed as soon as they brought forth `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_1, "</code>", "</span>")})` and `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})`, the creatures died off.  
+
+## Puzzling
+
+Puzzled, the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})` sought out the advice of the  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})`.  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})`.  This was the wisest and most thoughtful of the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})`.  He looked down into the mist of the primordial soup that was the land of `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_1, "</code>", "</span>")})`, and very thoughtfully pointed out that the creatures had nothing to eat, no land, no sky, and no water.  The   `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_2, "</code>", "</span>")})` pointed them to several well-known texts on the subject of creation, and encouraged them all to go back to basic science, religion, moral philosophy, history, and literature class before they messed around creating their own world.  
+
+## So Now What?
+
+So, the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})` tried again.  This time out of the primordial soup they created the firmaments of sky and earth, and brought forth `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})`  and `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_1, "</code>", "</span>")})` in addition to the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_1, "</code>", "</span>")})` and this was the beginning of the grand experiment undertaken by the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})` of `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_1, "</code>", "</span>")})`.  This new land was rich in resources, a veritable garden of glory.  All the requirements for a blissful existence were present in abundance. The `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})` created two species of interest to their social experiments.  These two creatures were to be able to self-replicate and would need to rely on each other for survival.
+
+## Interesting Side Note
+
+The `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_1, "</code>", "</span>")})` were `r renderUI({HTML("<code>", "<span style=color:#066265>", input$texture_1_, "</code>", "</span>")})` and became easy prey for the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$color_2, "</code>", "</span>")})`  Since the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_1, "</code>", "</span>")})` tasted so good, it was not too long into the experiment that the  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_1, "</code>", "</span>")})` in large farms.  
+
+## Super Genius
+
+The smartest of the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})`,  discovered that   could combine with   to create food for the  to consume. Thus allowing for increased production of .  The saw their world had created a system that was self-sustaining.  A circular flow of production using the natural inputs to breed more  that the  could eat.  The breeding of the allowed more of the  to breed, which then further increased the demand for. Visually, this population dynamic looked a bit like this:
+
+```{r,  echo = FALSE, message = FALSE, warning = FALSE}
+
+library(ggplot2)
+library(shiny)
+library(gganimate)
+library(transformr)
+library(tidyverse)
+library(readr)
+library(gifski)
+library(png)
+
+predatorprey <- read_csv("predatorprey.csv")
+
+
+ 
+anim <- ggplot(predatorprey, aes(x = Time, y = Quantity)) + 
+  geom_point(aes(colour = Subject), size = 4)  + 
+  transition_states(Time,
+                    transition_length = 2,
+                    state_length = 1) +
+  xlab("Time") +
+  ylab("Quantity Alive")
+
+anim + 
+  enter_fade() + enter_drift(x_mod = -1) + 
+  exit_shrink() + exit_drift(x_mod = 5)
+
+```
+
+This pleased the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})`, so they decided they would call it quits for a few millenia while they `r renderUI({HTML("<code>", "<span style=color:#066265>", input$action_1, "</code>", "</span>")})` `r renderUI({HTML("<code>", "<span style=color:#066265>", input$color_1, "</code>", "</span>")})` `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_4, "</code>", "</span>")})`  .  When the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})` woke up from their college-days shenanigans, they remembered about their experiment.  So, down into the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_1, "</code>", "</span>")})` they looked.  What they saw surprised them!  
+
+```{r,  echo = FALSE, message = FALSE, warning = FALSE}
+
+
+renderPlot({
+  ggplot(predatorprey, aes(x = Time, y = Quantity)) +
+    geom_point(aes(color = Subject), size = 4) +
+    geom_line(aes(color = Subject))
+})
+
+```
+
+# Toil and Trouble
+
+As the plot of their experiment showed, in the first few milennia life was good in the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_1, "</code>", "</span>")})` .  Both   `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_1, "</code>", "</span>")})`  and  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})` were thriving.  Populations of both species were increasing and food was plentiful.  
+
+### It Didn't Last 
+
+The weather was nice and life carried on uneventfully for many thousands of years.  As time went on however, they noticed that things were beginning to change in the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_1, "</code>", "</span>")})`   The  were growing faster than the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_1, "</code>", "</span>")})`  and the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_1, "</code>", "</span>")})`  and `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_1, "</code>", "</span>")})` and `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_3, "</code>", "</span>")})`  were becoming more scarce.  As the population of  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})`  kept increasing they consumed more and more `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_1, "</code>", "</span>")})`.  Then, in the Milennia 10 the system began to breakdown.  The population of `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_1, "</code>", "</span>")})`  began to crash, followed shortly thereafter by  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})` .  
+
+####  What Had Happened?  
+
+Their beautiful world was now an empty shell of its former self.  The `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})` wondered what went wrong, and if they could stop this "Boom and Bust" cycle from recurring.  
+
+### How to Fix?
+
+So, the wisest among the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})`, decided that some form of centralized control was required to help stop the  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})`  from decimating the population of the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_1, "</code>", "</span>")})`.  The `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})` created the Bureau of `r renderUI({HTML("<code>", "<span style=color:#066265>", input$verb_3, "</code>", "</span>")})`  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_4, "</code>", "</span>")})`.  They appointed the smartest of the  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})`  to oversee the growth, management, and distribution of `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_1, "</code>", "</span>")})` to the population of  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})`  
+
+### Command and Control
+
+The first thing the Bureau of `r renderUI({HTML("<code>", "<span style=color:#066265>", input$verb_3, "</code>", "</span>")})` `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_4, "</code>", "</span>")})` did, was to lay out how much of `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_1, "</code>", "</span>")})` and  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})` that the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_1, "</code>", "</span>")})` would support over a long period of time.  
+
+### Seeking Guidance
+
+Once again, they felt it wise to consult the  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_2, "</code>", "</span>")})`  for advice.  The  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_2, "</code>", "</span>")})`  asked if anyone had studied moral philosophy while they were in college.  One `r renderUI({HTML("<code>", "<span style=color:#066265>", input$adverb_3, "</code>", "</span>")})`   raised his `r renderUI({HTML("<code>", "<span style=color:#066265>", input$object_1, "</code>", "</span>")})`.  "Good", said the  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_2, "</code>", "</span>")})`  "You will be the Chief of the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$verb_3, "</code>", "</span>")})` `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_4, "</code>", "</span>")})`.  
+
+Chief then went back to his abode and began to scratch his noodle (what they call thinking) about the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_1, "</code>", "</span>")})`.  He decided to sketch out his thoughts and do a little math.  So, in `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_1, "</code>", "</span>")})` they have two inputs into keeping `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_1, "</code>", "</span>")})` and  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})` . 
+
+
+### Developing a Thought?
+
+Chief was lost.  He really did not pay enough attention in college.  He knew the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_2, "</code>", "</span>")})` would be sorely dissapointed with him.  So, he went back to the drawing board.  He reasoned, in our great land the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})` need  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_1, "</code>", "</span>")})`  and  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_3, "</code>", "</span>")})` to survive. If Chief wants to ensure the well-being of `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})`, then he needs to make sure that the most `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_1, "</code>", "</span>")})` and `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_3, "</code>", "</span>")})` can be produced using the available resources and the available technology in the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_1, "</code>", "</span>")})`. However, he notices that `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_1, "</code>", "</span>")})` cannot be produced equally from the available inputs. To produce the total level of well-being for the inhabitants (`r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_1, "</code>", "</span>")})` and `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})`), he can use a combination of `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_1, "</code>", "</span>")})` and `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_3, "</code>", "</span>")})`, but the more he uses of one input, the less he gets of the other.  There appears to be some sort of tradeoff in the production of the two goods that support the inhabitants of this great land.    
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, context = "render"}
+
+#sliderInput("number_x", "Number of Input 1", min = 1, max = 100, value = 30)
+#sliderInput("number_y", "Number of Input 2", min = 1, max = 100, value = 20)
+
+
+plotOutput("ppfPlot")
+
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, context = "server"}
+
+PPF <- read_csv("PPF.csv")
+
+output$ppfPlot <- renderPlot({
+  p <- ggplot(PPF, aes(x = x, y = y)) +
+    geom_line(color = "cadetblue4", size = 1) +
+    geom_point(color = "cadetblue4", size = 4) +
+    xlab(input$creature_2) +
+    ylab(input$creature_1) +
+    labs(title = paste("Production of", input$creature_1, "and", input$creature_2)) +
+    theme(
+      plot.title = element_text(size = rel(3), face = "italic", color = "cadetblue4", hjust = 0.5),
+      axis.title.y = element_text(size = rel(2), color = "cadetblue4"),
+      axis.title.x = element_text(size = rel(2), color = "cadetblue4")
+    )
+  p
+})
+
+```
+
+## Opportunity Abounds?
+
+Seeing the production of `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_1, "</code>", "</span>")})` and `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_3, "</code>", "</span>")})` like this makes Chief wonder what the cost of producing more of `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_1, "</code>", "</span>")})` would be on `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_3, "</code>", "</span>")})`. That is to say, what is the cost of increasing `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_1, "</code>", "</span>")})` ?  He reckons that the cost of producing more `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_1, "</code>", "</span>")})` is the change in production of `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_3, "</code>", "</span>")})`.  Chief grabs a book off his shelf and dusts it off.  He flips through the first chapter of the book, and finds the folloiwng term **OPPORTUNITY COST**.  The opportunity cost of increasing the production of `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_1, "</code>", "</span>")})` is the amount of `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_3, "</code>", "</span>")})` he has to give up.  Ah.  So, Chief thinks he should sketch this out as well, just to make sure he understood the basic trade-offs that seemed to be going on `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_1, "</code>", "</span>")})`.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, context = "render"}
+
+#sliderInput("number_x", "Number of Input 1", min = 1, max = 100, value = 30)
+#sliderInput("number_y", "Number of Input 2", min = 1, max = 100, value = 20)
+
+
+plotOutput("ppf1Plot",
+           brush = "plot_brush",
+           height = 500
+           )
+
+verbatimTextOutput("info")
+
+verbatimTextOutput("oc")
+
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, context = "server"}
+
+PPF <- read_csv("PPF.csv")
+
+output$ppf1Plot <- renderPlot({
+  p <- ggplot(PPF, aes(x = x, y = y)) +
+    geom_line(color = "cadetblue4", size = 1) +
+    geom_point(color = "cadetblue4", size = 4) +
+    xlab(input$creature_2) +
+    ylab(input$creature_1) +
+    labs(title = paste("Production of", input$creature_1, "and", input$creature_2)) +
+    theme(
+      plot.title = element_text(size = rel(3), face = "italic", color = "cadetblue4", hjust = 0.5),
+      axis.title.y = element_text(size = rel(2), color = "cadetblue4"),
+      axis.title.x = element_text(size = rel(2), color = "cadetblue4")
+    )
+  p
+})
+
+output$info <- renderPrint({
+  brushedPoints(PPF, input$plot_brush)
+})
+
+
+
+```
+
+## Opportunity Cost
+
+When Chief plotted out the production possibilities, he could clearly see that the trade off between the two inputs, implied that to increase the production of one of the goods he would be forced to give up the other good.  This trade off, or opportunity cost, means that there is NO FREE LUNCH.  The cost of anything you might want, is what you have to give up to get it.  Whether that be time or money or energy or love -- or pretty shiny toys.  To get, you must give.  The `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_2, "</code>", "</span>")})` kept referring to economics as the study of how to allocate scarce resources; but seemed to emphasize that economics was rooted in *MORAL PHILOSOPHY* and without some morality guiding how a society allocates resources, that scarcity and efficiency alone were insufficient to assure good outcomes.  Chief was beginning to understand that just optimizing the number of his species, was not necessarily a good thing.  The `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_1, "</code>", "</span>")})`'s should also have a say in things??  He couldn't escape the morality of the situation.  However this did not help him allocate anything.  So, back to the books and some more *noodle scratching*
+
+# Social Welfare
+
+After plowing through some more material, Chief realized that the world in which he lived was bounded by a circular flow of resources and that things seemed to be inter-related.  He noticed that how many `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_1, "</code>", "</span>")})`'s were demanded by `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})`, directly influenced the number of `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})` 's that were employed in producing `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_1, "</code>", "</span>")})`  or `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_3, "</code>", "</span>")})`.  He also noticed, that the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})` 's seemed pretty sensitive to changes in the price of the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_1, "</code>", "</span>")})` -- and that the supply of `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_1, "</code>", "</span>")})` and `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_1, "</code>", "</span>")})` impacted the price of `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_3, "</code>", "</span>")})`.  In the books given to him by `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_2, "</code>", "</span>")})` they described this as demand and supply.  The area below the *demand curve* he called *consumer surplus* and the area above the *supply curve* and below the price level that the goods seemed to trade at was termed *producer surplus*.  He attempted to sketch this out and showed it to `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_2, "</code>", "</span>")})`, but `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_2, "</code>", "</span>")})` smacked him upside his noodle with a ruler and said, "*DEMAND IS DOWNWARD SLOPING!!* As PRICE *RISES* the quantity demanded *FALLS*."  Well, that put chief in his place. He fixed his plot, and this is what it showed...
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+#https://github.com/andrewheiss/reconPlots
+
+
+library(reconPlots)
+
+line1 <- data.frame(x = c(1, 9), y = c(1, 9))
+line1
+
+
+line2 <- data.frame(x = c(9, 1), y = c(1, 9))
+line2
+
+
+line_intersection <- curve_intersect(line1, line2)
+line_intersection
+
+ggplot(mapping = aes(x = x, y = y)) +
+  geom_line(data = line1, color = "red", size = 1) +
+  geom_line(data = line2, color = "blue", size = 1) +
+  geom_vline(xintercept = line_intersection$x, linetype = "dotted") +
+  geom_hline(yintercept = line_intersection$y, linetype = "dotted") +
+  theme_classic()
+
+```
+
+# What if the World Weren't Linear
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+
+curve1 <- data.frame(Hmisc::bezier(c(1, 8, 9), c(1, 5, 9)))
+curve2 <- data.frame(Hmisc::bezier(c(1, 3, 9), c(9, 3, 1)))
+
+curve_intersection <- curve_intersect(curve1, curve2)
+curve_intersection
+#> $x
+#> [1] 4.654098
+#> 
+#> $y
+#> [1] 3.395566
+
+ggplot(mapping = aes(x = x, y = y)) +
+  geom_line(data = curve1, color = "red", size = 1) +
+  geom_line(data = curve2, color = "blue", size = 1) +
+  geom_vline(xintercept = curve_intersection$x, linetype = "dotted") +
+  geom_hline(yintercept = curve_intersection$y, linetype = "dotted") +
+  theme_classic()
+
+```
+
+What Chief realized, an epiphany really, is that his society would be better off if they good get to that point where demand and supply intersected.  That the triangle area that showed *producer surplus* and *consumer surplus* were the biggest when the buyers and sellers of each input `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})` or `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_1, "</code>", "</span>")})` had the following key components:
+
+1. Good Information on prices and quality
+2. Lots of buyers and sellers
+3. Each `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})` (whether a producer or consumer) had an ownership stake and could privately and freely exchange `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})` or `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_1, "</code>", "</span>")})` according to their tastes and preferences and/or cost to produce.
+
+It seemed key that no one group had too much power, and that there was a well-functioning set of rules in place that ensured fair play amongst the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})` producers and consumers.
+
+# GDP and the Price Level in `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_1, "</code>", "</span>")})`
+
+GDP= C+I+G+(X-M)
+GDP= Private Consumption + Gross Investment + Gov Investment + Gov Spending + (Exports - Imports)
+GDP in the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_1, "</code>", "</span>")})` = 1000 + (300) + 1452 + 10000 + (531-5000) 
+
+So, at least on paper it is pretty easy to calculate GDP, as it is simply  the row x row summation of the number of units sold multiplied by the price per unit.  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_2, "</code>", "</span>")})` had emphatically stressed that this was a way to gauge the health of the society, but it only provided a single dimension upon which to judge how the economy was doing.  There were many things not captured by this measure, but it was at least an indicator variable that help Chief ferret out what was working or not in their `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_1, "</code>", "</span>")})`.  
+
+One thing that wasn't quite clear was the relationship between his *Production Possibilities Frontier* and his *Social Welfare* graphs once he computed GDP.  So, Chief went to `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_2, "</code>", "</span>")})` and asked for clarification.  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_2, "</code>", "</span>")})` explained that if you added up all the individual trades for each `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})` and `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_1, "</code>", "</span>")})` you would end up the *Aggregate Demand* and *Aggregate Supply* which were in fact the *Y* and the *C+I+G+(X-M)* variables.  
+
+These values were influenced and connected to the flow of resources in the economy. Any increases in technology that increased output per each unit of input, changes in population, or fluctuations in demand, or even changes to the rules of the game that the Bureau of `r renderUI({HTML("<code>", "<span style=color:#066265>", input$verb_3, "</code>", "</span>")})`  `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_4, "</code>", "</span>")})` implemented would impact these *GDP* values which would in turn be a way to measure the impact on society of the policies enacted, or changes in the environment.  
+
+
+# A New Era Must Dawn
+
+Chief was tired.  All this back and forth with the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_2, "</code>", "</span>")})` and the creators of the world, the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})`.  He decided he was going to call it quits.  He turned in his resignation and informed the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_2, "</code>", "</span>")})`  that it was about time the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})` took over their own experiment. Chief had clearly concluded that letting the market do what it does best was probably the best strategy.  All the Bureau of `r renderUI({HTML("<code>", "<span style=color:#066265>", input$verb_3, "</code>", "</span>")})` `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_4, "</code>", "</span>")})` had to do was make sure their were good:
+
+1. **PROPERTY RIGHTS**
+2. **INFORMATION**
+3. **LOTS OF BUYERS AND SELLERS**
+4. **EASY ENTRY AND EXIT**
+
+With that, Chief hung up his Chief hat, and went back to being a `r renderUI({HTML("<code>", "<span style=color:#066265>", input$texture_1_, "</code>", "</span>")})` `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})`.  
+
+## THE BEGINNING Part II
+
+Many a long milennia had transpired since the great Chief of the the Bureau of `r renderUI({HTML("<code>", "<span style=color:#066265>", input$verb_3, "</code>", "</span>")})` `r renderUI({HTML("<code>", "<span style=color:#066265>", input$input_4, "</code>", "</span>")})` had faded into the dusts of time.  During this time life on `r renderUI({HTML("<code>", "<span style=color:#066265>", input$name_1, "</code>", "</span>")})` had changed significantly.  Multiple plagues had swept through the land, populations had risen and fallen.  Leaders had come and gone.  All bound to the fundamental forces of nature and the need to eat, survive, and breed.  
+
+However, during these millenia, the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})` 's had noticed that the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_1, "</code>", "</span>")})` and `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})` had been steadily increasing technology and social capital.  The `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_1, "</code>", "</span>")})` 's had developed defenses against the scourge of the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_2, "</code>", "</span>")})` 's and that life had evolved to include many more creatures and complexity than anything the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})` 's could have imagined in their world.  Now, the `r renderUI({HTML("<code>", "<span style=color:#066265>", input$creature_3, "</code>", "</span>")})` 's had long since left their college days behind them, and the world they created new creatures and creations ruled and propsered.  As they peeked down into their world they now saw a new dynamic, and were puzzled yet again.  
+
+
+
+
